@@ -1,25 +1,62 @@
-# BecoSwap Toolkit
+# 🛢 Jetswap UIkit
 
-This repository is a monorepo manage with [yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) and [Lerna](https://lerna.js.org/). 
+<!-- [![Version](https://img.shields.io/npm/v/@jetswap-libs/uikit)](https://www.npmjs.com/package/@jetswap-libs/uikit) [![Size](https://img.shields.io/bundlephobia/min/@jetswap-libs/uikit)](https://www.npmjs.com/package/@jetswap-libs/uikit) -->
 
-## Packages
+Jetswap UIkit is a set of React components and hooks used to build pages on Jetswap's apps. It also contains a theme file for dark and light mode.
 
-- [pancake-uikit](https://github.com/becoswap/becoswap-toolkit/tree/master/packages/pancake-uikit) : React components used to build the Pancake UI
-- [eslint-config-beco](https://github.com/becoswap/becoswap-toolkit/tree/master/packages/eslint-config-beco) : An ESLint config for beco, with Typescript and Prettier support
+## Install
 
-## How to use
+`npm i jetswap-uikit`
 
-Clone the repository 
+## Setup
 
-```
-git clone git@github.com:becoswap/becoswap-toolkit.git
-```
+### Theme
 
-Run yarn at the root of the workspace
+Before using Jetswap UIkit, you need to provide the theme file to styled-component.
 
 ```
-cd becoswap-toolkit
-yarn
+import { ThemeProvider } from 'styled-components'
+import { light, dark } from 'jetswap-uikit'
+...
+<ThemeProvider theme={isDark}>...</ThemeProvider>
 ```
 
-Then, refer to the readme of each project.
+### Reset
+
+A reset CSS is available as a global styled component.
+
+```
+import { ResetCSS } from 'jetswap-uikit'
+...
+<ResetCSS />
+```
+
+### Types
+
+This project is built with Typescript and export all the relevant types.
+
+## How to use the UIkit
+
+If you want to use components from the UIkit, check the [Storybook documentation](https://jetswap.github.io/pancake-uikit/)
+
+## How to Customize UIkit
+
+First clone this repo to local and then start editing the components, theme, etc.
+
+When is finished the Customization of the UIkit build it using:
+
+`npm run build`
+
+Commit everything to the git repo and if you are using a diferent repo just change it in package.json.
+
+If you have a commit error due to husky you can try:
+
+`git commit -am 'commit' --no-verify`
+
+That should solve the problem, then push to remote repo.
+
+After this you need to [publish the npm packege](https://zellwk.com/blog/publish-to-npm/)
+
+Be aware of the versions, If you make an update change the version in package.json so when you publish this's not gonna throw you an error.
+
+Go to the npm package you create an you are ready to use it.

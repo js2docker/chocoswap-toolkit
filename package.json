@@ -2,7 +2,6 @@
   "name": "chocoswap-toolkit",
   "version": "1.0.0",
   "description": "Chocoswap frontend packages",
-  "private": true,
   "workspaces": [
     "packages/*"
   ],
